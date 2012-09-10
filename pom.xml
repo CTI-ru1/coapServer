@@ -16,6 +16,13 @@
         </dependency>
 
         <dependency>
+            <groupId>uberdust</groupId>
+            <artifactId>WebSocketsLibrary</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+
+        <dependency>
             <groupId>californium</groupId>
             <artifactId>californium</artifactId>
             <version>1.0</version>
