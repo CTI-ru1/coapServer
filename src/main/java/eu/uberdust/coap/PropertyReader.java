@@ -68,7 +68,7 @@ public final class PropertyReader {
      * @return the Property File Object.
      */
     public Properties getProperties() {
-        LOGGER.debug("getProperties()");
+        LOGGER.trace("getProperties()");
         return properties;
     }
 

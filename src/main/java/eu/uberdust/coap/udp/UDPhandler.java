@@ -1,5 +1,6 @@
 package eu.uberdust.coap.udp;
 
+import eu.uberdust.coap.Converter;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -39,6 +40,9 @@ public class UDPhandler extends Thread {//NOPMD
             try {
                 LOGGER.info("Waiting for data");
                 socket.receive(packet);
+                LOGGER.info("Received from " + packet.getSocketAddress());
+                LOGGER.info(Converter.getInstance().payloadToString(packet.getData()));
+
             } catch (IOException e) {
                 LOGGER.fatal(e.getMessage(), e);
             }

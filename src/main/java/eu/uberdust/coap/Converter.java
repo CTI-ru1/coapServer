@@ -1,4 +1,5 @@
 package eu.uberdust.coap;
+
 import org.apache.log4j.Logger;
 
 /**
@@ -94,5 +95,19 @@ public class Converter {
             capabilities[i] = capabilities[i].substring(0, capabilities[i].indexOf('>'));
         }
         return capabilities;
+    }
+
+    public String payload(byte[] payload) {
+        final StringBuilder stringBuilder = new StringBuilder("");
+        for (int i : payload) {
+            final String str = Integer.toHexString(i);
+            if (str.length() <= 2) {
+                stringBuilder.append(str).append(",");
+            } else {
+                stringBuilder.append(str.substring(str.length() - 2)).append(",");
+            }
+        }
+
+        return stringBuilder.toString().substring(0, stringBuilder.toString().length() - 1);
     }
 }

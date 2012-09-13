@@ -9,12 +9,17 @@
     <version>1.0</version>
     <dependencies>
 
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.12</version>
-        </dependency>
 
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-websocket</artifactId>
+            <version>8.0.4.v20111024</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.4</version>
+        </dependency>
         <dependency>
             <groupId>uberdust</groupId>
             <artifactId>WebSocketsLibrary</artifactId>
@@ -29,8 +34,18 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/ExampleClient.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>com.hp.hpl.jena</groupId>
+            <artifactId>jena</artifactId>
+            <version>2.6.4</version>
+        </dependency>
     </dependencies>
 
+
+    <properties>
+        <jetty-version>8.0.4.v20111024</jetty-version>
+        <main.basedir>${project.basedir}</main.basedir>
+    </properties>
 
     <build>
         <plugins>

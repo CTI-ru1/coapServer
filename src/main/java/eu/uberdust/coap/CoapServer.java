@@ -37,6 +37,7 @@ public class CoapServer {
     private static final long MILLIS_TO_STALE = 3 * 60 * 1000;
 
 //    private static final String URL="http://uberdust.cti.gr/rest/testbed/";
+
     /**
      * Constructor.
      */
@@ -45,6 +46,7 @@ public class CoapServer {
         PropertyReader.getInstance().setFile("coap.properties");
 
         NodeHandler.getInstance();
+        UberdustNodeHandler.getInstance();
 
         mid = new Random();
 
@@ -69,10 +71,10 @@ public class CoapServer {
      */
     public static CoapServer getInstance() {
         synchronized (CoapServer.class) {
-        LOGGER.info("get instance");
-        if (instance == null) {
-            instance = new CoapServer();
-        }
+            LOGGER.info("get instance");
+            if (instance == null) {
+                instance = new CoapServer();
+            }
         }
         return instance;
     }
@@ -87,15 +89,15 @@ public class CoapServer {
     public void sendReply(final DatagramPacket replyPacket) {
         LOGGER.info("sent response");
         synchronized (CoapServer.class) {
-        try {
+            try {
 
-            LOGGER.info("sent response");
-            socket.send(replyPacket);
-            LOGGER.info("sent response");
-        } catch (IOException e) {
-            LOGGER.error(e.getMessage(), e);
-            e.printStackTrace();
-        }
+                LOGGER.info("sent response");
+                socket.send(replyPacket);
+                LOGGER.info("sent response");
+            } catch (IOException e) {
+                LOGGER.error(e.getMessage(), e);
+                e.printStackTrace();
+            }
         }
     }
 
