@@ -115,6 +115,7 @@ public class CoapUdpRequestHandler implements Runnable {//NOPMD
                     if (udpRequest.getCode() == CodeRegistry.METHOD_POST) {
 
                         String newuri = requestURI.substring(requestURI.indexOf("/", 1));
+                        newuri = newuri.replace("urn:wisebed:node:capability:", "");
                         Request req = new Request(CodeRegistry.METHOD_POST, false);
                         req.setURI(newuri);
                         req.setPayload(udpRequest.getPayload());
