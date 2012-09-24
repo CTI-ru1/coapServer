@@ -75,7 +75,7 @@ public class NodeHandler extends TimerTask {
                 }
 
             }
-        }, 10000, 10 * 60 * 1000);
+        }, 10000, 30 * 60 * 1000);
     }
 
     @Override
